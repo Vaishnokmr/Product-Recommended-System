@@ -1,6 +1,7 @@
-﻿nltk==3.8.1
+nltk==3.8.1
 numpy==1.24.1
 pandas==1.5.2
+pickle
 python-dateutil==2.8.2
 python-json-logger==2.0.4
 regex==2022.10.31

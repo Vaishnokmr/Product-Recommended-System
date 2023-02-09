@@ -1,0 +1,107 @@
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    <style>
+        body {
+            /*             background: url('http://www.pngimagesfree.com/LOGO/Z/Zomato/Zomato-Logo-PNG-HD-Transparent.png') no-repeat; */
+            background-size: 20%;
+            background-color: #681d1d;
+            flex-wrap: wrap;
+
+        }
+        a {
+            text-decoration: none;
+            color: aliceblue;
+        }
+        h1 {
+            font-size: 45px;
+        }
+
+        h2 {
+            display: inline-block;
+            font-size: 25px;
+            color: aliceblue;
+            overflow: hidden;
+            white-space: nowrap;
+
+        }
+
+        h2 :first-of-type {
+            animation: shownup 7s infinite;
+
+        }
+
+        h2 :last-of-type {
+            width: 0px;
+            animation: reveal 7s infinite;
+        }
+
+        h2 :last-of-type span {
+            margin-left: -355px;
+            animation: slidein 7s infinite;
+        }
+
+
+        h3 {
+            font-size: 25px;
+
+        }
+
+        label {
+            font-size: 10px;
+            color: #ffeeee;
+
+        }
+    </style>
+</head>
+<title> Recommended System</title>
+
+<body>
+
+
+    <div class="container">
+        <!-- <img src="http://www.pngimagesfree.com/LOGO/Z/Zomato/Zomato-Logo-PNG-HD-Transparent.png" style="width: 15%;height: 10%;" alt="" srcset=""> -->
+        <br><br>
+        <h2><span>Recommended System</span>
+
+        </h2><br><br><br>
+        <div class="row" style="text-align: center;">
+
+            <div class="card-body" style="padding: 0rem 23rem;">
+
+                <div style="color: aliceblue;">
+
+                    <form action="{{ url_for('predict')}}" method="post">
+                        <div class="form-group">
+                            <label><b>Select Movie name</b></label><br>
+                            <select class="form-control" style="text-align: center;" name="rest_type" id="rest_type"
+                                required="required">
+                                {% for name in mov %}
+                                <option value="{{name}}"> {{name}} </option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <br>
+                        <button type="submit" class="btn btn-outline-dark">Recommend Movies</button>
+                    </form>
+                    <h4>{{select_movie}}</h4>
+                    <br>
+                    <br>
+
+                    <div>
+                        <h3>{{text}}</h3></div>
+                </div>
+                {% for recom in prediction_text %}
+                <li style="color:rgb(223, 174, 235) ;">{{recom}}</li>
+                {% endfor %}
+</body>
+</html>

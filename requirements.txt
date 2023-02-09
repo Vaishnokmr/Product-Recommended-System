@@ -2,3 +2,4 @@ pandas
 sklearn
 numpy
 pickleshare
+streamlit

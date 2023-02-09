@@ -38,11 +38,13 @@ Deployment: Deploy the fine-tuned model in the movie recommendation system and m
 
 ## Behind the Scene
 For Movie Recommended uses content-based recommendation system uses features of the products, such as movie genre, director, and actors, to recommend similar items based on the similarity score. This approach is suitable for recommending products with well-defined features and attributes.
+
 ![alt text](https://github.com/Vaishnokmr/Recommended-System/blob/main/ContentBased.png)
 
 As we can see that, There are various sport which is high similar score with each other rather than "3 Idiot" which movie content cause of low similar score to sports content. 
 
 A collaborative-based recommendation system uses the behavior and preferences of similar users to recommend items. It calculates the similarity score between users based on their past interactions with the items and uses this score to make recommendations. This approach is suitable for recommending items in domains where user behavior and preferences are well-known, such as movie recommendations.
+
 ![alt text](https://github.com/Vaishnokmr/Recommended-System/blob/main/CollaborativeBased.png)
 
 As we can see that, Person A likes Cricket with high similarity score and Person B likes as well. So based on Person A likes Football with similarity score their past interactions with the items and uses this score recommend to Person B.   

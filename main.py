@@ -13,7 +13,7 @@ def recommend_content(movie):
     for i in movie_list:
         movie_name.append(movies.iloc[i[0]].title)
     return movie_name
-movie_dict = pickle.load(open('content_recommend\movie.pkl','rb'))
+movie_dict = pickle.load(open('content_recommend/movie.pkl','rb'))
 # similar = pickle.load(open('similar.pkl','rb'))
 movies = pd.DataFrame(movie_dict)
 cv = CountVectorizer(max_features=5000, stop_words='english')
@@ -32,9 +32,9 @@ def recommend(book_name):
         item.extend(list(temp_df.drop_duplicates('Book-Title')['Image-URL-M'].values))
         data.append(item)
     return data
-book_dict = pickle.load(open(r'collaborative_recommend\books.pkl','rb'))
-similarity_scores = pickle.load(open(r'collaborative_recommend\similarity_scores.pkl','rb'))
-pivot_final = pickle.load(open(r'collaborative_recommend\books_data.pkl','rb'))
+book_dict = pickle.load(open(r'collaborative_recommend/books.pkl','rb'))
+similarity_scores = pickle.load(open(r'collaborative_recommend/similarity_scores.pkl','rb'))
+pivot_final = pickle.load(open(r'collaborative_recommend/books_data.pkl','rb'))
 
 st.title('Movie Recommend')
 option = st.selectbox('How would yould like to ', movies['title'].values)
